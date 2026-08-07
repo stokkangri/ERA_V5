@@ -205,7 +205,6 @@ S5/
   README.md            ← this plan (submission surface)
   inventory.md         ← supply table
   proxy_protocol.md    ← pass/fail metrics
-  EVA5_S5.pdf          ← session source
 ```
 
 ## Submission
