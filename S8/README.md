@@ -5,7 +5,8 @@
 Web app: chronological timeline of attention mechanisms (problem → trade-offs → when to pick).
 
 - **App folder:** [`attention-timeline/`](./attention-timeline/)
-- **Live:** *(Netlify URL after deploy)*
+- **GitHub:** https://github.com/stokkangri/ERA_V5/tree/main/S8
+- **Live:** turn on **Settings → Pages → GitHub Actions** in the repo (workflow already pushed), then use `https://stokkangri.github.io/ERA_V5/` — or drag `attention-timeline/` onto [Netlify Drop](https://app.netlify.com/drop)
 - **Date sources:** see [`attention-timeline/README.md`](./attention-timeline/README.md)
 
 ### Question 2 (short)

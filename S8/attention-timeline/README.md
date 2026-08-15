@@ -2,8 +2,10 @@
 
 Interactive timeline of attention mechanisms in **launch order**, each framed as an answer to a bill the field was trying not to pay.
 
-**Live app:** *(add Netlify URL after deploy)*  
-**This folder:** static site (`index.html` + `data.js` + `app.js` + `styles.css`)
+**Live app:** enable GitHub Pages (Settings → Pages → Source: **GitHub Actions**), then open  
+`https://stokkangri.github.io/ERA_V5/`  
+— or Netlify Drop the `attention-timeline/` folder.  
+**Repo:** https://github.com/stokkangri/ERA_V5/tree/main/S8/attention-timeline
 
 ## Run locally
 
