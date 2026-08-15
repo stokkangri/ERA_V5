@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Attention, Chronologically</title>
+    <meta
+      name="description"
+      content="Every major attention mechanism in the order it launched — as an answer to a bill the field was trying not to pay."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero wrap">
+      <div class="hero-visual" aria-hidden="true">
+        <canvas id="bill-canvas" class="bill-canvas"></canvas>
+      </div>
+      <div class="hero-copy">
+        <h1 class="brand">Attention,<br />Chronologically</h1>
+        <p class="hero-lead">
+          Vanilla attention was not wrong. It was expensive. Everything after it is
+          someone staring at that bill and trying to pay less of it.
+        </p>
+        <div class="hero-cta">
+          <a class="btn" href="#timeline">Walk the timeline</a>
+          <a class="btn btn-ghost" href="#story">What the order shows</a>
+        </div>
+        <p class="meta-line">ERA V5 · Session 8 · dates checked against papers</p>
+      </div>
+    </header>
+
+    <section class="story wrap" id="story">
+      <h2>What you cannot see from a list</h2>
+      <p>
+        Grouped by family, these look like competing recipes. Laid out by launch date,
+        they look like a field changing its mind about which part of the bill hurts most.
+      </p>
+      <p>
+        First it wants <strong>exactness</strong> (pay n²). Then it wants
+        <strong>memory bandwidth</strong> back at decode time. Then it wants
+        <strong>length</strong>. Then memory again — because long context made the KV
+        cache the villain a second time. Linear / delta methods keep trying to change the
+        asymptotics entirely. Once you see the oscillation, you can guess what comes next:
+        another compression of state, or another way to drop the positional scaffold that
+        helped training but blocks extrapolation.
+      </p>
+      <div class="phases">
+        <div class="phase" data-era="exactness">
+          <strong>2017 — Exactness</strong>
+          <span>Softmax attention + positions. Correct and costly.</span>
+        </div>
+        <div class="phase" data-era="memory">
+          <strong>2019–23 — Memory</strong>
+          <span>MQA → GQA → MLA. Shrink the KV you reload every step.</span>
+        </div>
+        <div class="phase" data-era="length">
+          <strong>2020–25 — Length</strong>
+          <span>Windows, RoPE/ALiBi, sinks, YaRN, DroPE. Survive past L.</span>
+        </div>
+        <div class="phase" data-era="compute">
+          <strong>2020–24 — Asymptotics</strong>
+          <span>Linear, delta, gated delta. Stop paying n² at all.</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="controls">
+      <div class="controls-inner wrap">
+        <button class="chip active" type="button" data-era="all">All</button>
+        <button class="chip" type="button" data-era="exactness">Exactness</button>
+        <button class="chip" type="button" data-era="compute">Compute</button>
+        <button class="chip" type="button" data-era="memory">Memory</button>
+        <button class="chip" type="button" data-era="length">Length</button>
+        <input
+          class="search"
+          id="search"
+          type="search"
+          placeholder="Search mechanisms…"
+          aria-label="Search mechanisms"
+        />
+        <span class="meta-line" id="count"></span>
+      </div>
+    </div>
+
+    <main class="timeline wrap" id="timeline" aria-label="Chronological attention timeline"></main>
+
+    <div class="detail-shell">
+      <div class="detail" id="detail" role="dialog" aria-modal="true" aria-label="Mechanism detail">
+        <div id="detail-inner"></div>
+      </div>
+    </div>
+
+    <footer class="wrap">
+      <p>
+        Built for ERA V5 Session 8. Click any mechanism for problem → answer → buys/costs →
+        when to pick it. Sources and date notes are in
+        <a href="README.md">the README</a>.
+      </p>
+      <p>
+        Correction worth flagging: the course page listed <em>DroPE (2024)</em>; the Sakana
+        paper landed on arXiv <strong>13 Dec 2025</strong> (<a href="https://arxiv.org/abs/2512.12167">2512.12167</a>).
+      </p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
